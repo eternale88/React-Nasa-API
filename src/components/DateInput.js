@@ -1,9 +1,17 @@
 import React from 'react'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+
 const DateInput = (props) => (
-  <form className="text-center" onSubmit={props.changeDate}>
-    Enter a date (YYYY-MM-DD):
-    <input className="form-control" />
-    <input className="btn btn-primary" type="submit" />
-  </form>
+  <div className="text-center">
+    <p>
+      <em>Pick a Date</em>
+    </p>
+    <DatePicker
+      className="form-control"
+      selected={props.date}
+      onChange={props.changeDate}
+    />
+  </div>
 )
 export default DateInput

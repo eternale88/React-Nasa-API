@@ -1,7 +1,14 @@
 import React from 'react'
 const Photo = (props) => (
   <div className="card card-body bg-light">
-    <h3>{props.photo.title}</h3>
+    <h4 className="text-center">{props.photo.title}</h4>
+    {
+      // <iframe
+      //   className="img-fluid rounded"
+      //   src={props.photo.url}
+      //   alt={props.photo.title}
+      // ></iframe>
+    }
     <img
       className="img-fluid rounded"
       src={props.photo.url}

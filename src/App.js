@@ -6,14 +6,16 @@ import { API_KEY } from './keys.js'
 
 class App extends Component {
   state = {
-    date: '',
+    date: new Date(),
     photo: ''
   }
-  changeDate = (e) => {
-    e.preventDefault()
-    let dateFromInput = e.target[0].value
-    this.setState({ date: dateFromInput })
-    this.getPhotoByDate(dateFromInput)
+  formatDate = (date) => {
+    // converts date to yyyy-mm-dd
+    return date.toISOString().split('T')[0]
+  }
+  changeDate = (date) => {
+    this.setState({ date: date })
+    this.getPhotoByDate(this.formatDate(date))
   }
   getPhotoByDate = (date) => {
     fetch(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=${API_KEY}`)
@@ -39,8 +41,8 @@ class App extends Component {
     return (
       <div className="container">
         <div className="card card-body bg-light">
-          <h1>NASA's Astronomy Picture of the Day</h1>
-          <DateInput changeDate={this.changeDate} />
+          <h2 className="text-center">NASA's Astronomy Picture of the Day</h2>
+          <DateInput date={this.state.date} changeDate={this.changeDate} />
           <Photo photo={this.state.photo} />
         </div>
       </div>
