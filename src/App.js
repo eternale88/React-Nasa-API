@@ -13,15 +13,34 @@ class App extends Component {
     e.preventDefault()
     let dateFromInput = e.target[0].value
     this.setState({ date: dateFromInput })
-    console.log
+    this.getPhotoByDate(dateFromInput)
+  }
+  getPhotoByDate = () => {
+    fetch(
+      `https://api.nasa.gov/planetary/apod?date=${this.date}&api_key=${API_KEY}`
+    ).then((response) => {
+      console.log(response)
+    })
+  }
+  // lifecycle method that render photo before app renders
+  componentDidMount() {
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
+      .then((response) => {
+        return response.json()
+      })
+      .then((json) => {
+        this.setState({ photo: json })
+      })
   }
 
   render() {
     return (
-      <div>
-        <h1>NASA's Astronomy Picture of the Day</h1>
-        <DateInput changeDate={this.changeDate} />
-        <Photo />
+      <div className="container">
+        <div className="card card-body bg-light">
+          <h1>NASA's Astronomy Picture of the Day</h1>
+          <DateInput changeDate={this.changeDate} />
+          <Photo photo={this.state.photo} />
+        </div>
       </div>
     )
   }
