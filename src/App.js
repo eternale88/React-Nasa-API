@@ -15,12 +15,14 @@ class App extends Component {
     this.setState({ date: dateFromInput })
     this.getPhotoByDate(dateFromInput)
   }
-  getPhotoByDate = () => {
-    fetch(
-      `https://api.nasa.gov/planetary/apod?date=${this.date}&api_key=${API_KEY}`
-    ).then((response) => {
-      console.log(response)
-    })
+  getPhotoByDate = (date) => {
+    fetch(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=${API_KEY}`)
+      .then((response) => {
+        return response.json()
+      })
+      .then((photoData) => {
+        this.setState({ photo: photoData })
+      })
   }
   // lifecycle method that render photo before app renders
   componentDidMount() {
