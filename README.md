@@ -1,5 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## Nasa APOD Picture of the Day App
 A new project to fetch and display data taken from Nasa's photo of the day API. 
 
 ## Available Scripts
