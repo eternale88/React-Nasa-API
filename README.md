@@ -1,5 +1,5 @@
 ## Nasa APOD Picture of the Day App
-A new project to fetch and display data taken from Nasa's photo of the day API. 
+A new project to fetch and display data taken from Nasa's photo of the day API. Initial goal is to call the Nasa Api and render the photo of the day, on page render, allow the user to pick any individual photo by date, and implement a responsive UI with CSS styling and positioning. Stretch goal is to allow user to pick a random photo and display that. Will update readme with url and how to run this project locally very soon.
 
 ## Available Scripts
 
