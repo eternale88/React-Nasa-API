@@ -9,6 +9,20 @@ class App extends Component {
     date: new Date(),
     photo: ''
   }
+  randomDate = (start, end) => {
+    // return random date between start of Nasa POD and current Date
+    return new Date(
+      start.getTime() + Math.random() * (end.getTime() - start.getTime())
+    )
+  }
+
+  handleClick = (date) => {
+    // generates random date and passes it into our
+    // changeDate function which also updates state and
+    // fetches a photo again
+    let ranDate = this.randomDate(new Date(1995, 0o6 - 1, 16), new Date())
+    this.changeDate(ranDate)
+  }
   formatDate = (date) => {
     // converts date to yyyy-mm-dd
     return date.toISOString().split('T')[0]
@@ -42,7 +56,11 @@ class App extends Component {
       <div className="container">
         <div className="card card-body bg-light">
           <h2 className="text-center">NASA's Astronomy Picture of the Day</h2>
-          <DateInput date={this.state.date} changeDate={this.changeDate} />
+          <DateInput
+            date={this.state.date}
+            changeDate={this.changeDate}
+            handleClick={this.handleClick}
+          />
           <Photo photo={this.state.photo} />
         </div>
       </div>

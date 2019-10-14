@@ -1,6 +1,6 @@
 import React from 'react'
 const Photo = (props) => {
-  //check to see if nasa api returns video or image
+  //function to check to see if nasa api returns video or image
   // and render correct html accordingly
   function renderContentType() {
     if (props.photo.media_type === 'image') {
