@@ -2,8 +2,8 @@
   "name": "astronomy-picture-of-the-day",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://eternale88.github.io/",
   "dependencies": {
-    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-datepicker": "^2.9.6",
