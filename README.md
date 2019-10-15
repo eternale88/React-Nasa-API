@@ -10,7 +10,11 @@ or
 - npm install package.json
 - npm start to view in at localhost:3000
 
-## API Docs
+## API Docs and dependencies
 Nasa APOD API - [https://api.nasa.gov/]
 
 React - [https://reactjs.org/]
+
+React Date Picker - [https://www.npmjs.com/package/react-datepicker]
+
+Gh-pages - [https://www.npmjs.com/package/gh-pages]
