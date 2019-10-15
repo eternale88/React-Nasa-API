@@ -1,5 +1,11 @@
 import React from 'react'
 const Photo = (props) => {
+
+  const explanationStyles = {
+    fontWeight: 'bold',
+    textShadow: 'navy 1px 1px'
+  }
+
   //function to check to see if nasa api returns video or image
   // and render correct html accordingly
   function renderContentType() {
@@ -31,7 +37,7 @@ const Photo = (props) => {
       <h4 className="text-center">{props.photo.title}</h4>
 
       {renderContentType()}
-      <p>{props.photo.explanation}</p>
+      <p style={explanationStyles}>{props.photo.explanation}</p>
     </div>
   )
 }
