@@ -9,3 +9,8 @@ or
 ## Clone project
 - npm install package.json
 - npm start to view in at localhost:3000
+
+## API Docs
+Nasa APOD API - [https://api.nasa.gov/]
+
+React - [https://reactjs.org/]
