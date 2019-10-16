@@ -6,6 +6,11 @@ const Photo = (props) => {
     textShadow: 'navy 1px 1px'
   }
 
+  const titleStyles = {
+    textShadow: '1px 1px darkred',
+    textAlign: 'center'
+  }
+
   //function to check to see if nasa api returns video or image
   // and render correct html accordingly
   function renderContentType() {
@@ -34,7 +39,7 @@ const Photo = (props) => {
   }
   return (
     <div className="card card-body bg-light">
-      <h4 className="text-center">{props.photo.title}</h4>
+      <h4 style={titleStyles}>{props.photo.title}</h4>
 
       {renderContentType()}
       <p style={explanationStyles}>{props.photo.explanation}</p>

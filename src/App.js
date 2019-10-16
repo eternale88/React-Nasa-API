@@ -31,7 +31,7 @@ class App extends Component {
     this.setState({ date: date })
     this.getPhotoByDate(this.formatDate(date))
   }
-  getPhotoByDate = (date) => {
+  getPhotoByDate = date => {
     fetch(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=${API_KEY}`)
       .then((response) => {
         return response.json()
@@ -51,11 +51,19 @@ class App extends Component {
       })
   }
 
+  
+
+
   render() {
+    // Style for header
+    const headerStyle = {
+      textShadow: '1px 2px #282794',
+      textAlign: 'center'
+    }
     return (
       <div className="container">
-        <div className="card card-body bg-light">
-          <h2 className="text-center">NASA's Astronomy Picture of the Day</h2>
+        <div className="card card-body">
+          <h2 style={headerStyle} >NASA's Astronomy Picture of the Day</h2>
           <DateInput
             date={this.state.date}
             changeDate={this.changeDate}
